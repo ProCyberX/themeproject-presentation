@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentinel-AI | Easy Presentation</title>
+    <title>Sentinel-AI | Full Workflow Presentation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -18,6 +18,7 @@
         .header-branding { position: fixed; top: 0; width: 100%; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.05); background: #050505; }
         .footer-branding { position: fixed; bottom: 0; width: 100%; padding: 1rem 4rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; font-size: 0.85rem; color: #71717a; border-top: 1px solid rgba(255,255,255,0.05); background: #050505; }
         .btn-nav { background: #0ea5e9; color: white; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; cursor: pointer; }
+        .step-num { background: #0ea5e9; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 1rem; }
     </style>
 </head>
 <body>
@@ -31,83 +32,63 @@
             </div>
         </div>
         <div class="text-right">
-            <p class="text-lg font-bold text-sky-500 uppercase tracking-tighter">Sentinel-AI</p>
+            <p class="text-lg font-bold text-sky-500 uppercase">Sentinel-AI</p>
         </div>
     </header>
 
     <section class="slide active" id="slide-1">
         <div class="text-center">
             <h1 class="text-8xl font-bold mb-6 tracking-tighter uppercase">Sentinel-<span class="text-sky-500">AI</span></h1>
-            <p class="text-3xl text-gray-400 mb-12">AI Tool for Cloud Building & Security Auditing</p>
-            <div class="flex justify-center gap-8">
-                <div class="card p-6 w-72 border-t-4 border-sky-500">
-                    <p class="text-gray-500 text-xs font-bold uppercase mb-2">Submitted By</p>
-                    <p class="text-lg font-bold">Group Theme Project</p>
-                    <p class="text-sm text-sky-400 font-bold uppercase tracking-widest mt-1">B.Tech CSE 2026</p>
-                </div>
+            <p class="text-3xl text-gray-400 mb-12 italic text-center">Cloud Architect & Autonomous Security Auditor</p>
+            <div class="card inline-block p-6 border-t-4 border-sky-500">
+                <p class="text-gray-500 text-xs font-bold uppercase mb-2">Presented As</p>
+                <p class="text-xl font-bold">Group Theme Project VI (B.Tech CSE)</p>
             </div>
         </div>
     </section>
-
-    <section class="slide" id="slide-2">
+ <section class="slide" id="slide-2">
+        <h2 class="text-5xl font-bold text-center mb-12 text-sky-400 uppercase tracking-widest italic text-center">Our Team</h2>
+        <div class="grid grid-cols-3 gap-6">
+            <div class="card p-8 text-center border-t-8 border-sky-500 bg-sky-500/10"><h4 class="text-xl font-bold">Khwairakpam Prosenjit Singha</h4><p class="text-sky-400 text-xs font-bold uppercase">Lead Developer</p></div>
+            <div class="card p-8 text-center border-t-8 border-gray-700"><h4 class="text-xl font-bold">Gourab Chakraborty</h4><p class="text-gray-500 text-xs uppercase">Frontend</p></div>
+            <div class="card p-8 text-center border-t-8 border-gray-700"><h4 class="text-xl font-bold">Soumyadeep Nath</h4><p class="text-gray-500 text-xs uppercase">Design</p></div>
+            <div class="card p-8 text-center border-t-8 border-gray-700 col-start-1"><h4 class="text-xl font-bold">Victor Bhattacharjee</h4><p class="text-gray-500 text-xs uppercase">Database</p></div>
+            <div class="card p-8 text-center border-t-8 border-gray-700"><h4 class="text-xl font-bold">Ayushi Saha</h4><p class="text-gray-500 text-xs uppercase">Documentation</p></div>
+        </div>
+    </section>
+    <section class="slide" id="slide-3">
         <div class="grid grid-cols-2 gap-12 items-center text-left">
             <div>
-                <h2 class="text-6xl font-bold mb-10 text-sky-400 uppercase tracking-tighter">The Problem</h2>
-                <div class="space-y-8">
-                    <div class="p-6 card border-l-8 border-red-500">
-                        <p class="text-2xl font-bold">1. Human mistakes cause 80% of data breaches.</p>
-                    </div>
-                    <div class="p-6 card border-l-8 border-red-500">
-                        <p class="text-2xl font-bold">2. Security checking is too slow and difficult.</p>
-                    </div>
+                <h2 class="text-6xl font-bold mb-10 text-sky-400 uppercase">The Problem</h2>
+                <div class="space-y-6">
+                    <p class="text-2xl card p-4 border-l-8 border-red-500 italic">Human errors lead to 80% of cloud security leaks.</p>
+                    <p class="text-2xl card p-4 border-l-8 border-red-500 italic">Security checks are slow and manual.</p>
                 </div>
             </div>
             <div class="card p-8 h-80 flex flex-col items-center justify-center">
                 <canvas id="breachChart"></canvas>
-                <p class="text-center text-sm mt-4 text-gray-500">Most cloud risks happen during configuration.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="slide" id="slide-3">
-        <h2 class="text-5xl font-bold text-center mb-12 text-sky-400 uppercase tracking-widest">Our Solution</h2>
-        <div class="grid grid-cols-3 gap-8">
-            <div class="card p-10 text-center border-b-8 border-sky-500">
-                <i class="fas fa-magic text-4xl text-sky-500 mb-4"></i>
-                <h4 class="text-2xl font-bold mb-4">Auto-Build</h4>
-                <p class="text-gray-300 text-lg">AI writes secure cloud code instantly from text.</p>
-            </div>
-            <div class="card p-10 text-center border-b-8 border-sky-500 bg-sky-500/5">
-                <i class="fas fa-search-shield text-4xl text-sky-500 mb-4"></i>
-                <h4 class="text-2xl font-bold mb-4">Auto-Audit</h4>
-                <p class="text-gray-300 text-lg">AI finds security bugs before deployment.</p>
-            </div>
-            <div class="card p-10 text-center border-b-8 border-sky-500">
-                <i class="fas fa-history text-4xl text-sky-500 mb-4"></i>
-                <h4 class="text-2xl font-bold mb-4">History Vault</h4>
-                <p class="text-gray-300 text-lg">Reports are saved in a secure database vault.</p>
             </div>
         </div>
     </section>
 
     <section class="slide" id="slide-4">
-        <h2 class="text-6xl font-bold text-center mb-12 text-sky-400 uppercase tracking-tighter">Technology Used</h2>
-        <div class="grid grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
-            <div class="card p-6 flex gap-6 items-center border-l-4 border-sky-500">
-                <div class="text-4xl text-sky-400"><i class="fas fa-desktop"></i></div>
-                <div><h4 class="text-2xl font-bold">Solid.js</h4><p class="text-gray-400">Used for building the User Interface.</p></div>
+        <div class="grid grid-cols-2 gap-12 items-center text-left">
+            <div>
+                <div class="step-num text-center">1</div>
+                <h2 class="text-5xl font-bold mb-6 text-sky-400 uppercase">Input & Build</h2>
+                <p class="text-2xl mb-6">User provides a simple text prompt.</p>
+                <ul class="space-y-4 text-gray-400">
+                    <li><i class="fas fa-check text-sky-500 mr-2"></i> AI understands your requirements.</li>
+                    <li><i class="fas fa-check text-sky-500 mr-2"></i> Generates professional Cloud code (IaC).</li>
+                    <li><i class="fas fa-check text-sky-500 mr-2"></i> Ready for security review.</li>
+                </ul>
             </div>
-            <div class="card p-6 flex gap-6 items-center border-l-4 border-sky-500">
-                <div class="text-4xl text-sky-400"><i class="fas fa-server"></i></div>
-                <div><h4 class="text-2xl font-bold">FastAPI</h4><p class="text-gray-400">Used for the Python Backend server.</p></div>
-            </div>
-            <div class="card p-6 flex gap-6 items-center border-l-4 border-sky-500">
-                <div class="text-4xl text-sky-400"><i class="fas fa-robot"></i></div>
-                <div><h4 class="text-2xl font-bold">Llama-3 AI</h4><p class="text-gray-400">Used for Security Logic via OpenRouter.</p></div>
-            </div>
-            <div class="card p-6 flex gap-6 items-center border-l-4 border-sky-500">
-                <div class="text-4xl text-sky-400"><i class="fas fa-database"></i></div>
-                <div><h4 class="text-2xl font-bold">Supabase</h4><p class="text-gray-400">Used as the secure Cloud Database.</p></div>
+            <div class="card p-6 bg-black font-mono text-green-400 border-sky-900">
+                <p class="text-xs text-gray-600 mb-2">// AI Generated Code</p>
+                <p>resource "aws_s3_bucket" "vault" {</p>
+                <p class="pl-4">bucket = "secure-data-2026"</p>
+                <p class="pl-4">acl    = "private"</p>
+                <p>}</p>
             </div>
         </div>
     </section>
@@ -115,20 +96,73 @@
     <section class="slide" id="slide-5">
         <div class="grid grid-cols-2 gap-12 items-center text-left">
             <div>
-                <h2 class="text-6xl font-bold mb-10 text-sky-400 uppercase tracking-tight">Main Features</h2>
-                <div class="space-y-6">
-                    <div class="p-4 card border-l-8 border-sky-500 bg-sky-500/5">
-                        <h4 class="text-xl font-bold text-sky-400">1. Security Score</h4>
-                        <p class="text-gray-300">Gives a 1 to 10 rating for code safety.</p>
-                    </div>
-                    <div class="p-4 card border-l-8 border-sky-500 bg-sky-500/5">
-                        <h4 class="text-xl font-bold text-sky-400">2. Vulnerability Scan</h4>
-                        <p class="text-gray-300">Detects major cloud security risks automatically.</p>
-                    </div>
-                    <div class="p-4 card border-l-8 border-sky-500 bg-sky-500/5">
-                        <h4 class="text-xl font-bold text-sky-400">3. Audit History</h4>
-                        <p class="text-gray-300">Tracks and saves all old security reports.</p>
-                    </div>
+                <div class="step-num text-center">2</div>
+                <h2 class="text-5xl font-bold mb-6 text-amber-500 uppercase">Security Audit</h2>
+                <p class="text-2xl mb-6 italic">The Auditor scans the code for threats.</p>
+                <ul class="space-y-4 text-gray-400">
+                    <li><i class="fas fa-search text-amber-500 mr-2"></i> Checks for OWASP vulnerabilities.</li>
+                    <li><i class="fas fa-search text-amber-500 mr-2"></i> Finds open ports or weak encryption.</li>
+                    <li><i class="fas fa-search text-amber-500 mr-2"></i> Calculates a "Security Score".</li>
+                </ul>
+            </div>
+            <div class="card p-6 border-amber-500/50 bg-amber-500/5">
+                <p class="text-amber-500 font-bold mb-2 uppercase text-center">Scan Report</p>
+                <p class="text-sm text-gray-300">"Warning: Public access detected in S3 policy. High Risk found."</p>
+                <div class="mt-4 text-3xl font-bold text-amber-400 text-center uppercase tracking-widest">Score: 4/10</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-6">
+        <div class="grid grid-cols-2 gap-12 items-center text-left">
+            <div>
+                <div class="step-num text-center">3</div>
+                <h2 class="text-5xl font-bold mb-6 text-emerald-500 uppercase">Fix & Save</h2>
+                <p class="text-2xl mb-6 italic text-center">AI suggests how to fix the code.</p>
+                <ul class="space-y-4 text-gray-400">
+                    <li><i class="fas fa-shield-alt text-emerald-500 mr-2"></i> Fixes the vulnerability automatically.</li>
+                    <li><i class="fas fa-shield-alt text-emerald-500 mr-2"></i> Re-calculates security health.</li>
+                    <li><i class="fas fa-shield-alt text-emerald-500 mr-2"></i> Saves report to the Supabase Vault.</li>
+                </ul>
+            </div>
+            <div class="card p-6 border-emerald-500/50 bg-emerald-500/5 text-center">
+                <i class="fas fa-check-circle text-6xl text-emerald-500 mb-4"></i>
+                <p class="text-xl font-bold text-emerald-400">Fixed & Secured</p>
+                <p class="text-sm text-gray-500 mt-2 italic text-center">Pushed to Vault Database.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-7">
+        <h2 class="text-5xl font-bold text-center mb-12 text-sky-400 uppercase tracking-widest italic">Technology Stack</h2>
+        <div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto text-left">
+            <div class="card p-6 flex gap-4 items-center border-l-4 border-sky-500">
+                <i class="fas fa-desktop text-sky-500 text-2xl"></i>
+                <div><h4 class="font-bold uppercase">Solid.js</h4><p class="text-sm text-gray-400">Modern Frontend UI</p></div>
+            </div>
+            <div class="card p-6 flex gap-4 items-center border-l-4 border-sky-500">
+                <i class="fas fa-server text-sky-500 text-2xl"></i>
+                <div><h4 class="font-bold uppercase">FastAPI</h4><p class="text-sm text-gray-400">Python Backend</p></div>
+            </div>
+            <div class="card p-6 flex gap-4 items-center border-l-4 border-sky-500">
+                <i class="fas fa-robot text-sky-500 text-2xl"></i>
+                <div><h4 class="font-bold uppercase">Llama-3 AI</h4><p class="text-sm text-gray-400">Security Reasoning</p></div>
+            </div>
+            <div class="card p-6 flex gap-4 items-center border-l-4 border-sky-500">
+                <i class="fas fa-database text-sky-500 text-2xl"></i>
+                <div><h4 class="font-bold uppercase">Supabase</h4><p class="text-sm text-gray-400">Secure Database</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="slide" id="slide-8">
+        <div class="grid grid-cols-2 gap-12 items-center text-left">
+            <div>
+                <h2 class="text-5xl font-bold mb-8 text-sky-400 uppercase tracking-tight italic">Main Features</h2>
+                <div class="space-y-4">
+                    <div class="p-4 card border-l-4 border-sky-500"><h4 class="font-bold text-sky-400">AI Code Generation</h4><p class="text-sm text-gray-400">Converts text prompts to code.</p></div>
+                    <div class="p-4 card border-l-4 border-sky-500"><h4 class="font-bold text-sky-400">Live Security Audit</h4><p class="text-sm text-gray-400">OWASP threat detection.</p></div>
+                    <div class="p-4 card border-l-4 border-sky-500"><h4 class="font-bold text-sky-400">Persistent Vault</h4><p class="text-sm text-gray-400">History log for all scans.</p></div>
                 </div>
             </div>
             <div class="card p-4 h-96">
@@ -137,38 +171,23 @@
         </div>
     </section>
 
-    <section class="slide" id="slide-6">
-        <h2 class="text-5xl font-bold text-center mb-12 text-sky-400 uppercase tracking-widest italic">Project Team</h2>
-        <div class="grid grid-cols-3 gap-6">
-            <div class="card p-8 text-center border-t-8 border-sky-500 bg-sky-500/10">
-                <h4 class="text-xl font-bold mb-2 uppercase">K. Prosenjit Singha</h4>
-                <p class="text-sky-400 text-xs font-bold tracking-widest uppercase">Team Lead</p>
-            </div>
-            <div class="card p-8 text-center border-t-8 border-gray-700">
-                <h4 class="text-xl font-bold mb-2 uppercase">Gourab Chakraborty</h4>
-                <p class="text-gray-500 text-xs uppercase font-bold">Frontend</p>
-            </div>
-            <div class="card p-8 text-center border-t-8 border-gray-700">
-                <h4 class="text-xl font-bold mb-2 uppercase">Soumyadeep Nath</h4>
-                <p class="text-gray-500 text-xs uppercase font-bold">UI Design</p>
-            </div>
-            <div class="card p-8 text-center border-t-8 border-gray-700 col-start-1">
-                <h4 class="text-xl font-bold mb-2 uppercase">Victor Bhattacharjee</h4>
-                <p class="text-gray-500 text-xs uppercase font-bold">Database</p>
-            </div>
-            <div class="card p-8 text-center border-t-8 border-gray-700">
-                <h4 class="text-xl font-bold mb-2 uppercase">Ayushi Saha</h4>
-                <p class="text-gray-500 text-xs uppercase font-bold">Documentation</p>
-            </div>
+
+    <section class="slide" id="slide-9">
+        <h2 class="text-6xl font-bold text-center mb-12 text-sky-400 uppercase italic">Future Scope</h2>
+        <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+            <div class="p-6 card border-sky-500/20"><h4 class="font-bold text-sky-400 mb-2 uppercase text-left italic">PDF Reports</h4><p class="text-gray-400">Downloadable security audit certificates.</p></div>
+            <div class="p-6 card border-sky-500/20"><h4 class="font-bold text-sky-400 mb-2 uppercase text-left italic">Multi-Cloud Support</h4><p class="text-gray-400">Audit support for Azure and GCP platforms.</p></div>
+            <div class="p-6 card border-sky-500/20"><h4 class="font-bold text-sky-400 mb-2 uppercase text-left italic">Auto-Correction</h4><p class="text-gray-400">One-click 'Fix' button for all vulnerabilities.</p></div>
+            <div class="p-6 card border-sky-500/20"><h4 class="font-bold text-sky-400 mb-2 uppercase text-left italic">Team Collaboration</h4><p class="text-gray-400">Shared vaults for large development teams.</p></div>
         </div>
     </section>
 
-    <section class="slide" id="slide-7">
+    <section class="slide" id="slide-10">
         <div class="text-center">
-            <h1 class="text-8xl font-bold mb-4 uppercase tracking-tighter">Thank <span class="text-sky-500">You</span></h1>
-            <p class="text-2xl text-gray-400 mb-12 italic">"Sentinel-AI: Making Cloud Security Faster and Safer."</p>
-            <div class="card inline-block p-6 border-t-4 border-sky-500">
-                <p class="text-sky-400 font-bold mb-2 uppercase text-xs tracking-widest">Live System URL</p>
+            <h1 class="text-8xl font-bold mb-4 uppercase italic">Thank <span class="text-sky-500">You</span></h1>
+            <p class="text-2xl text-gray-400 mb-12 italic">"Securing the cloud, one prompt at a time."</p>
+            <div class="card inline-block p-6">
+                <p class="text-sky-400 font-bold mb-2 uppercase text-xs tracking-widest text-center">Live Link</p>
                 <p class="text-xl font-mono">sentinel-ai-black.vercel.app</p>
             </div>
         </div>
@@ -176,11 +195,11 @@
 
     <footer class="footer-branding">
         <div class="flex gap-4 items-center uppercase font-bold tracking-widest">
-            <i class="fas fa-code text-sky-500"></i>
+            <i class="fas fa-graduation-cap text-sky-500"></i>
             <span>Dept. of CSE | ICFAI University Tripura</span>
         </div>
         <div class="flex items-center gap-6">
-            <span id="slide-number">Slide 1 / 7</span>
+            <span id="slide-number">Slide 1 / 10</span>
             <div class="flex gap-2">
                 <div class="btn-nav" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></div>
                 <div class="btn-nav" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></div>
@@ -190,7 +209,7 @@
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 7;
+        const totalSlides = 10;
 
         function updateUI() {
             document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
@@ -221,7 +240,7 @@
                 data: {
                     labels: ['Security', 'Speed', 'Ease', 'Database', 'Audit'],
                     datasets: [{
-                        label: 'Sentinel-AI Performance',
+                        label: 'Sentinel-AI',
                         data: [9.5, 9, 10, 10, 10],
                         borderColor: '#0ea5e9', backgroundColor: 'rgba(14,165,233,0.2)'
                     }]
